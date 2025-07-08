@@ -13,6 +13,7 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
+
 // Initialize Firebase only once
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
@@ -22,6 +23,7 @@ export const db = getFirestore(app);
 // Function to get data from 'vira/restraunts'
 export async function getRestraunts() {
   const docRef = doc(db, "vira", "restraunts");
+  console.log("DB", db.toJSON());
   const docSnap = await getDoc(docRef);
   if (docSnap.exists()) {
     return docSnap.data();
