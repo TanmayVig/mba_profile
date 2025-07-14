@@ -2,7 +2,7 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
-// TODO: Replace with your Firebase project config
+
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -12,7 +12,6 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
-
 
 // Initialize Firebase only once
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
@@ -37,3 +36,19 @@ export async function setRestraunts(data: any) {
   const docRef = doc(db, "vira", "restraunts");
   await setDoc(docRef, data, { merge: true });
 }
+
+export async function updateRestraunt(id: string, newRemark: string) {
+  const docRef = doc(db, "vira", "restraunts");
+  const docSnap = await getDoc(docRef);
+  if (!docSnap.exists()) return;
+
+  const data = docSnap.data();
+  if (!Array.isArray(data.restrauntsList)) return;
+
+  const updatedList = data.restrauntsList.map((r: any) =>
+    r.id === id ? { ...r, remark: newRemark } : r
+  );
+
+  await setDoc(docRef, { restrauntsList: updatedList }, { merge: true });
+}
+

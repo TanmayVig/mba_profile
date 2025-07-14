@@ -6,6 +6,7 @@ export enum RemarksEnum {
   H = "H",
 }
 export interface Restraunt {
+  id: string;
   name: string;
   location: { latitude: number; longitude: number };
   link: string;
@@ -13,4 +14,11 @@ export interface Restraunt {
 }
 export interface RestrauntList {
   restrauntsList: Restraunt[];
+}
+
+export interface RestrauntFormData {
+  name: string;
+  location: { latitude: number; longitude: number };
+  link: string;
+  remark: RemarksEnum;
 }
