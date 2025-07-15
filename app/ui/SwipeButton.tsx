@@ -2,11 +2,23 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-export default function SwipeButton({url, text}:{url: string, text: string}) {
+export default function SwipeButton({
+  url,
+  text,
+  onSwipe,
+}: Readonly<{
+  url: string;
+  text: string;
+  onSwipe?: (url: string) => void;
+}>) {
   const router = useRouter();
 
   function handleSwipe() {
-    router.push(`/${url}`); // Change to your desired route
+    if (onSwipe) {
+      onSwipe(url);
+    } else {
+      router.push(`/${url}`);
+    }
   }
 
   return (

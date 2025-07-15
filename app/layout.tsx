@@ -19,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        className="bg-teal-200"
         style={{
           position: "relative",
           minHeight: "100vh",
@@ -28,6 +29,7 @@ export default function RootLayout({
       >
         {/* Background color lilac (#C8A2C8) */}
         <div
+          className="bg-teal-200"
           style={{
             position: "fixed",
             top: 0,
@@ -35,17 +37,19 @@ export default function RootLayout({
             width: "100vw",
             height: "100vh",
             zIndex: 0,
-            backgroundColor: "#C8A2C8", // lilac
             filter: "blur(12px)",
             opacity: 0.7,
             pointerEvents: "none",
           }}
         />
         <ConfettiRouteWrapper />
-        <div style={{zIndex: 1, position:'sticky'}}>
+        <div style={{ zIndex: 1, position: "sticky" }}>
           <Navbar />
         </div>
-        <div className="container mx-auto px-4 py-8" style={{ position: "relative", zIndex: 1 }}>
+        <div
+          className="container mx-auto px-4 py-8"
+          style={{ position: "relative", zIndex: 1 }}
+        >
           {children}
         </div>
       </body>

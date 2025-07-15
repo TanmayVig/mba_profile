@@ -116,10 +116,10 @@ export default function KhanpanPage() {
     <div className="min-h-screen px-2 pt-8">
       <div className="flex items-center justify-between max-w-xl pl-2">
         <h1 className="text-4xl font-bold text-gray-800 mb-6 text-left">
-          khanpan
+          khanpan🍴
         </h1>
         <button
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-6"
+          className="bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700 mb-6"
           onClick={() => setShowForm(true)}
         >
           kuch naya mila?
@@ -135,7 +135,7 @@ export default function KhanpanPage() {
         <div className="pl-2">Loading...</div>
       ) : (
         <div className="w-full max-w-xl pl-2 overflow-x-auto">
-          <table className="min-w-full bg-white rounded-lg shadow">
+          <table className="min-w-full bg-white rounded-lg shadow text-black">
             <thead>
               <tr>
                 <th className="px-4 py-2 text-left">Name</th>
@@ -151,30 +151,29 @@ export default function KhanpanPage() {
                 else if (r.remark === "B") remarkText = "Bad";
                 else if (r.remark === "E") remarkText = "Excellent";
                 else if (r.remark === "H") remarkText = "Homely";
-                console.log(r.id);
                 return (
-                  <tr key={r.id} className="border-t">
+                  <tr key={r.id} className="border-t text-black">
                     <td className="px-4 py-2 font-semibold">{r.name}</td>
                     <td className="px-4 py-2">
                       <a
                         href={r.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 underline text-sm"
+                        className="text-sm"
                       >
-                        Link
+                        🔗
                       </a>
                     </td>
                     <td className="px-4 py-2">
                       <div className="flex flex-wrap gap-1 items-center">
-                        <span className="bg-gray-200 rounded px-2 py-0.5 text-xs font-mono">
-                          {remarkText}
-                        </span>
+                        {/* <span className="bg-gray-200 rounded px-2 py-0.5 text-xs font-mono">
+                          
+                        </span> */}
                         <button
-                          className="ml-2 text-xs text-blue-600 underline"
+                          className="ml-2 text-xs font-mono"
                           onClick={() => setUpdateId(r.id)}
                         >
-                          Edit
+                          {remarkText} ✏️
                         </button>
                       </div>
                     </td>

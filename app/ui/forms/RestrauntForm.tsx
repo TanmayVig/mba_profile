@@ -32,7 +32,7 @@ export default function RestrauntForm({
   }
 
   return (
-    <div className="fixed inset-0 bg-opacity-40 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-opacity-40 flex items-center justify-center z-50 text-black">
       <form
         onSubmit={handleSubmit}
         className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md relative"
