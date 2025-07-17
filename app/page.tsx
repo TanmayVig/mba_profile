@@ -24,8 +24,8 @@ export default function Home() {
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-2 items-center justify-center place-content-stretch relative z-10">
         {/* Image Section */}
         <div className="flex justify-center items-center min-h-[180px]">
-          <Image
-            src={`https://${process.env.BLOB_HOSTNAME}/home.png`}
+          <img
+            src={`https://bzehms51fkes2tfe.public.blob.vercel-storage.com/home.png`}
             alt="Home Illustration"
             width={300}
             height={300}

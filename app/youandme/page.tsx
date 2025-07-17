@@ -36,7 +36,7 @@ export default function YouAndMePage() {
               <Image
                 width={300}
                 height={300}
-                src={`https://${process.env.BLOB_HOSTNAME}/bg2.jpg`}
+                src={`https://bzehms51fkes2tfe.public.blob.vercel-storage.com/bg2.jpg`}
                 alt="Babe G"
                 className="flex-none w-32 xs:w-64 sm:w-72 md:w-80 lg:w-96 max-w-full h-auto block mx-auto my-4 rounded-lg border-2 border-emerald-200"
               />
@@ -51,7 +51,7 @@ export default function YouAndMePage() {
               <Image
                 width={300}
                 height={300}
-                src={`https://${process.env.BLOB_HOSTNAME}/me.jpg`}
+                src="https://bzehms51fkes2tfe.public.blob.vercel-storage.com/me.jpg"
                 alt="me"
                 className="flex-none w-32 xs:w-64 sm:w-72 md:w-80 lg:w-96 max-w-full h-auto block mx-auto rounded-lg border-2 border-emerald-200"
               />
