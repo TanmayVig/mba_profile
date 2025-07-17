@@ -22,7 +22,7 @@ export default function SwipeButton({
   }
 
   return (
-    <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+    <div className="flex justify-center">
       <button
         className="bg-gradient-to-r from-pink-400 to-purple-400 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform active:scale-95"
         onPointerDown={handleSwipe}

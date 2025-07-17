@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef } from "react";
+import Image from "next/image";
 import SwipeButton from "@/app/ui/SwipeButton";
 
 export default function Home() {
@@ -20,14 +21,38 @@ export default function Home() {
       className="flex flex-col items-center justify-center min-h-[60vh] px-2 relative transition-all duration-500"
       style={{ willChange: "transform, opacity" }}
     >
-      <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-center break-words leading-tight">
-        Happy Anniversry to Us, BabeG!!
-      </h1>
-      <SwipeButton
-        url="youandme"
-        text="idhar dekho!❤️"
-        onSwipe={handleSwipeWithAnimation}
-      />
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-2 items-center justify-center place-content-stretch relative z-10">
+        {/* Image Section */}
+        <div className="flex justify-center items-center min-h-[180px]">
+          <Image
+            src={`https://${process.env.BLOB_HOSTNAME}/home.png`}
+            alt="Home Illustration"
+            width={300}
+            height={300}
+          />
+        </div>
+        {/* Text Section */}
+        <div className="flex flex-col justify-center items-center col-span-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center break-words leading-tight text-emerald-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+            Happy Anniversry to Us, BabeG!!
+          </h1>
+          <div className="flex justify-center m-3 col-span-3">
+            <SwipeButton
+              url="youandme"
+              text="Idhar dekho!❤️"
+              onSwipe={handleSwipeWithAnimation}
+            />
+          </div>
+        </div>
+        {/* Button centered below both sections */}
+        <div className="flex justify-center items-center min-h-[100px] col-span-1 md:col-span-3">
+          <img
+            src="/static/images/shinchan_dance.webp"
+            alt="Happy Dance 1"
+            className="h-44"
+          />
+        </div>
+      </div>
       <style jsx global>{`
         .slide-left {
           transform: translateX(-100vw) !important;
