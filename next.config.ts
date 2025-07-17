@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: process.env.BLOB_HOSTNAME,
+        hostname: process.env.BLOB_HOSTNAME as string,
         port: "",
         pathname: "/**",
       },
