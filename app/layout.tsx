@@ -19,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        className="bg-white"
         style={{
           position: "relative",
           minHeight: "100vh",
@@ -28,6 +29,7 @@ export default function RootLayout({
       >
         {/* Background color lilac (#C8A2C8) */}
         <div
+          className="bg-white"
           style={{
             position: "fixed",
             top: 0,
@@ -35,19 +37,29 @@ export default function RootLayout({
             width: "100vw",
             height: "100vh",
             zIndex: 0,
-            backgroundColor: "#C8A2C8", // lilac
-            filter: "blur(12px)",
             opacity: 0.7,
             pointerEvents: "none",
           }}
         />
         <ConfettiRouteWrapper />
-        <div style={{zIndex: 1, position:'sticky'}}>
+        <div style={{ zIndex: 2, position: "sticky", top: 0 }}>
           <Navbar />
         </div>
-        <div className="container mx-auto px-4 py-8" style={{ position: "relative", zIndex: 1 }}>
+        <div
+          className="container mx-auto px-4 py-8"
+          style={{ position: "relative", zIndex: 1 }}
+        >
           {children}
         </div>
+        {/* Top-left decorative orchid image (below navbar) */}
+
+        {/* Bottom-right decorative orchid image */}
+        {/* <img
+          src="/static/images/orchid.png"
+          alt="Orchid Bottom Right"
+          className="fixed bottom-0 right-0 w-24 sm:w-32 md:w-40 opacity-80 z-10 pointer-events-none select-none"
+          style={{ transform: "translate(20%, 20%) rotate(180deg)" }}
+        /> */}
       </body>
     </html>
   );
