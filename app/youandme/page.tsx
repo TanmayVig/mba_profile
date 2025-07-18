@@ -113,8 +113,8 @@ export default function YouAndMePage() {
                 />
               </div>
             </div>
-            <div className="min-h-72 flex flex-row items-center bg-white/80 rounded-xl shadow-lg p-4 border-l-4 border-emerald-400 story-step">
-              <p className="flex-2 m-7 text-left text-emerald-900">
+            <div className="min-h-72 grid grid-cols-3 items-center bg-white/80 rounded-xl shadow-lg p-4 border-l-4 border-emerald-400 story-step">
+              <p className="col-span-2 m-7 text-left text-emerald-900">
                 khud hi dekh lo...👀
               </p>
               <iframe
@@ -123,7 +123,7 @@ export default function YouAndMePage() {
                 width="320"
                 height="640"
                 allow="autoplay"
-                className="flex-none w-32 xs:w-64 sm:w-72 md:w-80 lg:w-96 max-w-full h-auto block mx-auto rounded-lg border-2 border-emerald-200"
+                className="flex-none max-w-full h-3/4 block mx-auto rounded-lg border-2 border-emerald-200"
               ></iframe>
             </div>
           </Deck>
