@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import HeartsAnimation from "@/app/ui/animations/heartAnimation";
+import Deck from "@/app/ui/Deck";
 
 export default function YouAndMePage() {
   const [showContent, setShowContent] = useState(false);
@@ -25,12 +26,10 @@ export default function YouAndMePage() {
             fadeIn ? "opacity-100" : "opacity-0"
           } w-full`}
         >
-          <div
-            className={`text-lg sm:text-xl font-bold text-center mx-auto px-4 grid grid-cols-1 gap-8 font-sans story-timeline ${
-              fadeIn ? "opacity-100" : "opacity-0"
-            } w-full`}
-            style={{ scrollBehavior: "smooth" }}
-          >
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center break-words leading-tight text-emerald-400 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+            Ye hai hamari kahani 👨🏼‍🤝‍👩🏼
+          </h1>
+          <Deck scrollMode="vertical">
             {/* babe G div */}
             <div className="flex flex-row items-center bg-white/80 rounded-xl shadow-lg p-4 border-l-4 border-emerald-400 story-step">
               <Image
@@ -100,24 +99,24 @@ export default function YouAndMePage() {
             <div className="flex flex-col items-end bg-white/80 rounded-xl shadow-lg p-4 border-l-4 border-emerald-400 story-step">
               <p className="col-span-2 text-right text-emerald-900">
                 All I can say to my past self is..."It'sworth the wait!"
+                <br />
+                aur agli slide mai usko dikhana chahunga!
               </p>
             </div>
-          </div>
-          <style jsx>{`
-            .story-step-wrapper {
-              transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.4s;
-            }
-            .story-step-wrapper:focus-visible,
-            .story-step-wrapper:focus,
-            .story-step-wrapper.in-focus {
-              transform: scale(1.08);
-              z-index: 20;
-              box-shadow: 0 8px 32px 0 rgba(34, 197, 94, 0.25),
-                0 1.5px 6px 0 rgba(0, 0, 0, 0.1);
-              outline: none;
-            }
-          `}</style>
+            <div className="flex flex-row items-center bg-white/80 rounded-xl shadow-lg p-4 border-l-4 border-emerald-400 story-step">
+              <p className="flex-1 m-7 text-left text-emerald-900">
+                khud hi dekh lo...👀
+              </p>
+              <iframe
+                title="reel"
+                src="https://drive.google.com/file/d/1KW_IeabJ2GHotkOVcdpzLA0hs2uJ1WkS/preview"
+                width="320"
+                height="640"
+                allow="autoplay"
+                className="flex-none w-32 xs:w-64 sm:w-72 md:w-80 lg:w-96 max-w-full h-auto block mx-auto rounded-lg border-2 border-emerald-200"
+              ></iframe>
+            </div>
+          </Deck>
         </div>
       )}
     </div>

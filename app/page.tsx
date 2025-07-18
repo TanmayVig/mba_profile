@@ -33,7 +33,7 @@ export default function Home() {
         </div>
         {/* Text Section */}
         <div className="flex flex-col justify-center items-center col-span-2">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center break-words leading-tight text-emerald-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center break-words leading-tight text-emerald-800 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
             Happy Anniversry to Us, BabeG!!
           </h1>
           <div className="flex justify-center m-3 col-span-3">
@@ -46,7 +46,9 @@ export default function Home() {
         </div>
         {/* Button centered below both sections */}
         <div className="flex justify-center items-center min-h-[100px] col-span-1 md:col-span-3">
-          <img
+          <Image
+            width={150}
+            height={200}
             src="/static/images/shinchan_dance.webp"
             alt="Happy Dance 1"
             className="h-44"
