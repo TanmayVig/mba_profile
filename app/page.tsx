@@ -11,7 +11,9 @@ export default function Home() {
 
   React.useEffect(() => {
     if (surprise) {
-      alert("Hello! My valentine❤️. I love you so so so much Babe G!💐");
+      alert(
+        "Hello! My valentine❤️. Thank you for accepting the proposal. I love you so so so much Babe G!💐",
+      );
     }
   }, [surprise]);
   return (
