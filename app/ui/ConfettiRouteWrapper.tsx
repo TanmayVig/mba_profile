@@ -8,7 +8,7 @@ const ConfettiRouteWrapper = () => {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    if (pathname === "/") {
+    if (pathname === "/anniversary") {
       setShow(true);
       const timer = setTimeout(() => setShow(false), 10000);
       return () => clearTimeout(timer);
@@ -17,7 +17,7 @@ const ConfettiRouteWrapper = () => {
     }
   }, [pathname]);
 
-  if (pathname !== "/" || !show) return null;
+  if (pathname !== "/anniversary" || !show) return null;
   return <Confetti />;
 };
 
