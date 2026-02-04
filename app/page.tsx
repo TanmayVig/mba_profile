@@ -1,68 +1,44 @@
 "use client";
-import React, { useRef } from "react";
 import Image from "next/image";
-import SwipeButton from "@/app/ui/SwipeButton";
+import React from "react";
+
+import Card from "@/app/ui/Card";
+import RunButton from "./ui/buttons/RunButton";
+import ChaseButton from "./ui/buttons/chaseButton";
 
 export default function Home() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [surprise, setSurprise] = React.useState(false);
 
-  function handleSwipeWithAnimation(url: string) {
-    if (containerRef.current) {
-      containerRef.current.classList.add("slide-left");
-      setTimeout(() => {
-        window.location.href = `/${url}`;
-      }, 500); // match animation duration
+  React.useEffect(() => {
+    if (surprise) {
+      alert("Hello! My valentine❤️. I love you so so so much Babe G!💐");
     }
-  }
-
+  }, [surprise]);
   return (
-    <div
-      ref={containerRef}
-      className="flex flex-col items-center justify-center min-h-[60vh] px-2 relative transition-all duration-500"
-      style={{ willChange: "transform, opacity" }}
-    >
-      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-2 items-center justify-center place-content-stretch relative z-10">
-        {/* Image Section */}
-        <div className="flex justify-center items-center min-h-[180px]">
-          <img
-            src={`https://bzehms51fkes2tfe.public.blob.vercel-storage.com/home.png`}
-            alt="Home Illustration"
-            width={300}
-            height={300}
-          />
-        </div>
-        {/* Text Section */}
-        <div className="flex flex-col justify-center items-center col-span-2">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center break-words leading-tight text-emerald-500 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
-            Happy Anniversry to Us, BabeG!!
-          </h1>
-          <div className="flex justify-center m-3 col-span-3">
-            <SwipeButton
-              url="youandme"
-              text="Idhar dekho!❤️"
-              onSwipe={handleSwipeWithAnimation}
-            />
+    <div className="flex flex-col items-center justify-center bg-rose-100 min-h-screen">
+      {surprise ? (
+        <Image
+          src={
+            "https://bzehms51fkes2tfe.public.blob.vercel-storage.com/surprised-the-office.gif"
+          }
+          alt="Surprised The Office GIF"
+          width={400}
+          height={400}
+          className="absolute"
+        />
+      ) : (
+        <Card>
+          <div className="m-9">
+            <h1 className="text-4xl font-bold text-rose-700">
+              Hello Babe G.... will you be my valentine?💐
+            </h1>
+            <div className="flex flex-row items-center gap-96 justify-center h-full p-4 mt-2">
+              <ChaseButton text="Yes" onSubmit={setSurprise} />
+              <RunButton text="No" />
+            </div>
           </div>
-        </div>
-        {/* Button centered below both sections */}
-        <div className="flex justify-center items-center min-h-[100px] col-span-1 md:col-span-3">
-          <Image
-            width={150}
-            height={200}
-            src="/static/images/shinchan_dance.webp"
-            alt="Happy Dance 1"
-            className="h-44"
-          />
-        </div>
-      </div>
-      <style jsx global>{`
-        .slide-left {
-          transform: translateX(-100vw) !important;
-          opacity: 0.5 !important;
-          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-            opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        }
-      `}</style>
+        </Card>
+      )}
     </div>
   );
 }

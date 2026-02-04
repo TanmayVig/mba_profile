@@ -19,17 +19,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="bg-white"
-        style={{
-          position: "relative",
-          minHeight: "100vh",
-          margin: 0,
-          padding: 0,
-        }}
+      // style={{
+      //   position: "relative",
+      //   minHeight: "100vh",
+      //   margin: 0,
+      //   padding: 0,
+      // }}
       >
         {/* Background color lilac (#C8A2C8) */}
         <div
-          className="bg-white"
+          className="bg-rose-100"
           style={{
             position: "fixed",
             top: 0,
